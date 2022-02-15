@@ -1,0 +1,54 @@
+The eot-utils are the two programs mkeot and eotinfo. The former
+creates an EOT (Embedded OpenType) file from an OpenType or TrueType
+font and the URLs of one or more Web pages. mkeot respects the
+TrueType embedding bits. The eotinfo program displays the contents of
+an EOT header in a human-readable way.
+[From: http://www.w3.org/Status#eot-utils]
+
+This directory contains:
+
+    mkeot - generate EOT from OpenType and zero or more "rootstrings"
+    eotinfo - simple program to show info about an EOT file
+    convert.pe - script for fontforge to convert OpenType to TrueType
+    bootstrap.sh - script to set up the automake/autoconf environment
+
+1) If you got the sources as a tar.gz file, unpack, configure, compile
+and install with the following commands (where XXX is the version
+number of the downloded tar.gz file):
+
+    tar xvfz eot-utilities-XXX.tar.gz
+    cd eot-utilities-XXX
+    ./configure
+    make
+    make install
+
+2) If you got the sources from CVS, you'll need to have GNU
+automake/autoconf installed. Create the configure script, configure,
+compile and install with:
+
+    ./bootstrap.sh
+    ./configure
+    make
+    make install
+
+See the file INSTALL for generic information about compilation options.
+
+
+
+EOT (Embedded OpenType) is documented at:
+http://www.w3.org/Submission/2008/01/
+
+
+
+Warning about limitations in MSIE (at least version 8):
+
+1) EOT files apparently only work if they are TrueType-flavored
+OpenType, not if they are Postscript-flavored. The included convert.pe
+script converts OTF to TTF. (It requires fontforge to be installed.)
+
+2) EOT files apparently only work if the font's family name is a
+prefix of the font's full name. The included convert.pe script tries
+to ensure that.
+
+3) EOT files apparently don't work if the "rootstring" is absent
+(empty). You'll need to give at least one URL to mkeot.

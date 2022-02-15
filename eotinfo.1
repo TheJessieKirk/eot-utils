@@ -1,0 +1,28 @@
+.TH "EOTINFO" "1" "25 Jan 2010" "1.x" "EOT UTILITIES"
+.SH NAME
+eotinfo \- display data from an EOT file in a readable way
+.SH SYNOPSIS
+.B eotinfo
+.RI "[\| " EOT-file " \|]"
+.SH DESCRIPTION
+.LP
+The
+.B eotinfo
+command displays information on standard output about the given EOT
+file. If no argument is given, it reads the EOT file from standard input.
+.LP
+EOT (Embedded OpenType) is a binary format and this program decodes
+most of the information in the EOT header. It does not read the actual
+font data, only the EOT header.
+.SH "SEE ALSO"
+.BR mkeot (1),
+.B EOT
+(see http://www.w3.org/Submission/2008/01/)
+.SH BUGS
+.LP
+.B eotinfo
+may display incorrect names for fonts that have non-ASCII characters
+in their names.
+.LP
+The list of Unicode ranges and the list of Windows Code Pages is
+currently incomplete.

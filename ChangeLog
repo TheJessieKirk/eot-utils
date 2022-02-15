@@ -1,0 +1,9 @@
+2012-02-29  Bert Bos  <bert@w3.org>
+
+	* Releases version 1.1
+
+	* eotinfo.c: Exit immediately when a file cannot be
+	opened. (Previously, the program continued after the error message
+	and then stopped because of a segmentation error.) Thanks to Jan
+	Pokorný <jpokorny@redhat.com>
+
